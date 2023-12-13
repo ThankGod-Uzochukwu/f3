@@ -23,12 +23,7 @@ const LoginScreen = ({navigation}) => {
       email: email,
       password: password,
     })
-    if (email === 'email' && password === 'password') {
-      await AsyncStorage.setItem('userToken', 'your_token_here');
-      navigation.navigate('Home');
-    } else{
-      alert ('Invalid Credentials. Please try again.')
-    }
+    
   };
 
 //   async function signInWithEmail(){
@@ -68,14 +63,14 @@ const LoginScreen = ({navigation}) => {
         secureTextEntry
         style={styles.input_text} />
 
+        <TouchableOpacity style={{flexDirection: 'row', marginLeft: '6%', }}>
+          <Text style={styles.links}>Forgot Password?</Text>
+        </TouchableOpacity>
 
-        <View style={styles.in_texts}>
-              <TouchableOpacity style={styles.texts}>
-                <Text style={styles.links}>Forgot Password?</Text>
-              </TouchableOpacity>
-                <Text style={styles.account}>No Account?</Text>
-              <TouchableOpacity style={styles.texts}>
-                <Text style={styles.links}>Sign Up</Text>
+        <View style={{flexDirection: 'row', margin: '5%', }}>
+                <Text style={styles.account}>No Account?     </Text>
+              <TouchableOpacity onPress={() => navigation.navigate('Register')}>
+                <Text style={styles.links}>Register</Text>
               </TouchableOpacity>
             </View>
         <Button title="Login" onPress={signInWithEmail} />
@@ -118,13 +113,6 @@ const styles = StyleSheet.create({
     margin: 10,
     padding: 15,
     height: "13%"
-  },
-  in_texts:{
-    justifyContent: "space-between",
-    margin: '2%'
-  },
-  texts:{
-    margin: '2%',
   },
   links:{
     color: 'blue',

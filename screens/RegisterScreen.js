@@ -12,7 +12,7 @@ const supabase = createClient(
   "https://vrxcmwinewvdehiebuyd.supabase.co", 
 "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZyeGNtd2luZXd2ZGVoaWVidXlkIiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTIwMDE1NDQsImV4cCI6MjAwNzU3NzU0NH0.ewReMBvhVref62Zdc5bdMSThD-0JkcqpNCdpphc85-w")
 
-const RegisterScreen = () => {
+const RegisterScreen = ({navigation}) => {
 
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -84,7 +84,7 @@ const RegisterScreen = () => {
             <View style={styles.in_texts}>
               <Text style={styles.account}>Have an account?</Text>
               <TouchableOpacity style={styles.texts}>
-                <Text style={styles.links}>Sign Up</Text>
+                <Text style={styles.links} onPress={() => navigation.navigate('Login')}>Login</Text>
               </TouchableOpacity>
             </View>
             
