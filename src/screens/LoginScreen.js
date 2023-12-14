@@ -1,5 +1,5 @@
 import { Alert, Button, Image, SafeAreaView, KeyboardAvoidingView, StyleSheet, Text, TextInput, View, useWindowDimensions, TouchableOpacity } from 'react-native'
-import f3 from '../assets/f3.png'
+import f3 from '../../assets/f3.png'
 import 'react-native-url-polyfill/auto'
 // import { supabase } from '../lib/supabase'
 import React from 'react'
@@ -18,13 +18,13 @@ const LoginScreen = ({navigation}) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  async function signInWithEmail() {
-    const { error } = await supabase.auth.signInWithPassword({
-      email: email,
-      password: password,
-    })
+  // async function signInWithEmail() {
+  //   const { error } = await supabase.auth.signInWithPassword({
+  //     email: email,
+  //     password: password,
+  //   })
     
-  };
+  // };
 
 //   async function signInWithEmail(){
     
@@ -73,7 +73,7 @@ const LoginScreen = ({navigation}) => {
                 <Text style={styles.links}>Register</Text>
               </TouchableOpacity>
             </View>
-        <Button title="Login" onPress={signInWithEmail} />
+        <Button title="Login" onPress={() => navigation.navigate('Home')} />
       </KeyboardAvoidingView>
     </SafeAreaView>
   )
