@@ -1,5 +1,5 @@
 import { Alert, Button, Image, KeyboardAvoidingView, SafeAreaView, StyleSheet, Text, TextInput, TouchableOpacity, View, useWindowDimensions } from 'react-native'
-import f3 from '../assets/f3.png'
+import f3 from '../../assets/f3.png'
 import 'react-native-url-polyfill/auto'
 // import { supabase } from '../lib/supabase'
 import React from 'react'
